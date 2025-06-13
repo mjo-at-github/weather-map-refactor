@@ -27,15 +27,25 @@ module.exports = async (req, res) => {
     return res.status(200).end();
   }
 
+  
   try {
-    const { city } = req.query;
+
+    const { lat, lon } = req.query;
+
     const response = await axios.get(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}&limit=1`
+
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.OPENWEATHER_API_KEY}`
+
     );
+
     res.json(response.data);
+
   } catch (error) {
-    console.error('Geocoding error:', error);
-    res.status(500).json({ error: 'Error fetching geocoding data' });
+
+    console.error('Weather API error:', error);
+
+    res.status(500).json({ error: 'Error fetching weather data' });
+
   }
 
 };
