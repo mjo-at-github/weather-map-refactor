@@ -18,7 +18,7 @@ const axios = require('axios');
 
 module.exports = async (req, res) => {
   // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://yourusername.github.io');
+  res.setHeader('Access-Control-Allow-Origin', 'https://mjo-at-github.github.io');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
