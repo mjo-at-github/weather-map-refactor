@@ -1,4 +1,4 @@
-const API_BASE = 'weather-map-refactor.vercel.app';
+const API_BASE = 'https://weather-map-refactor.vercel.app';
 
 // Initialize map
 const map = L.map('map').setView([51.505, -0.09], 3);
