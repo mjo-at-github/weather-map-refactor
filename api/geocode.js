@@ -28,13 +28,32 @@ module.exports = async (req, res) => {
   }
 
   try {
+
     const { city } = req.query;
-    const response = await axios.get(
+
+    /* const response = await axios.get(
       `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}&limit=1`
+    ); */
+
+    const response = await axios.get(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}&limit=1`,
+      {
+        headers: {
+          'User-Agent': 'weather-map-refactor.vercel.app (markjamesohara@gmail.com)' // REQUIRED by Nominatim
+        },
+        timeout: 5000 // 5 second timeout
+      }
     );
+
+
+
+
+
     res.json(response.data);
+
   } catch (error) {
     console.error('Geocoding error:', error);
     res.status(500).json({ error: 'Error fetching geocoding data' });
   }
+
 };
