@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Weather Map</h1>
+        
+        <form id="cityForm">
+            <input type="text" id="cityInput" placeholder="Enter location..." required>
+            <button type="submit">Get Weather</button>
+        </form>
+        
+        <div id="weatherResult"></div>
+        <div id="map"></div>
+        
+        <div class="attribution">
+            Weather data by <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeather</a> • 
+            Maps by <a href="https://openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

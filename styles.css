@@ -1,0 +1,181 @@
+:root {
+    --primary: #9DB4C0;
+    --secondary: #C0B7B1;
+    --accent: #E2CFEA;
+    --background: #F0F4FA;
+    --card: #FFFFFF;
+    --text: #5E6B7E;
+    --text-light: #A3B1C6;
+    --highlight: #B8D0EB;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(143, 168, 191, 0.2);
+    margin-top: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px);
+}
+
+h1 {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, #9DB4C0, #B8D0EB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#cityForm {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 14px 16px;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+    color: var(--text);
+}
+
+#cityInput:focus {
+    outline: none;
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 3px rgba(184, 208, 235, 0.3);
+}
+
+#cityInput::placeholder {
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+#cityForm button {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, var(--primary), var(--highlight));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(157, 180, 192, 0.3);
+}
+
+#cityForm button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(157, 180, 192, 0.4);
+}
+
+#weatherResult {
+    margin: 20px 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    color: var(--text);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.weather-icon {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 14px;
+    margin-top: 20px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 8px 32px rgba(143, 168, 191, 0.2);
+    overflow: hidden;
+}
+
+.attribution {
+    margin-top: 24px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.attribution a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.leaflet-popup-content {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(143, 168, 191, 0.3);
+    border: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.8);
+}
+
+.leaflet-popup-tip {
+    background: rgba(255,255,255,0.8);
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #cityForm {
+        flex-direction: column;
+    }
+    
+    #cityForm button {
+        width: 100%;
+    }
+    
+    #weatherResult {
+        flex-direction: column;
+        text-align: center;
+    }
+}
