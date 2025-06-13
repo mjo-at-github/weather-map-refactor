@@ -1,6 +1,4 @@
-// Vercel hosted API
-
-const API_BASE = 'weather-map-refactor-jjmp36dt6-marks-projects-c5912f79.vercel.app';
+const API_BASE = 'weather-map-refactor.vercel.app';
 
 // Initialize map
 const map = L.map('map').setView([51.505, -0.09], 3);
