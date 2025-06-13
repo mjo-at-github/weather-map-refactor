@@ -46,12 +46,12 @@ document.getElementById('cityForm').addEventListener('submit', async function(e)
 
 // Helper functions
 async function fetchGeocode(cityName) {
-    const response = await fetch(`http://localhost:3001/api/geocode?city=${encodeURIComponent(cityName)}`);
+    const response = await fetch(`/api/geocode?city=${encodeURIComponent(cityName)}`);
     return await response.json();
 }
 
 async function fetchWeather(lat, lon) {
-    const response = await fetch(`http://localhost:3001/api/weather?lat=${lat}&lon=${lon}`);
+    const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
     return await response.json();
 }
 
