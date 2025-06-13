@@ -1,0 +1,10 @@
+{
+  "name": "weather-map-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "serve -s public"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
