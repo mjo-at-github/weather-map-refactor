@@ -1,3 +1,7 @@
+// Vercel hosted API
+
+const API_BASE = 'weather-map-refactor-jjmp36dt6-marks-projects-c5912f79.vercel.app';
+
 // Initialize map
 const map = L.map('map').setView([51.505, -0.09], 3);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -46,12 +50,12 @@ document.getElementById('cityForm').addEventListener('submit', async function(e)
 
 // Helper functions
 async function fetchGeocode(cityName) {
-    const response = await fetch(`/api/geocode?city=${encodeURIComponent(cityName)}`);
+    const response = await fetch(`${API_BASE}/api/geocode?city=${encodeURIComponent(cityName)}`);
     return await response.json();
 }
 
 async function fetchWeather(lat, lon) {
-    const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
+    const response = await fetch(`${API_BASE}/api/weather?lat=${lat}&lon=${lon}`);
     return await response.json();
 }
 
