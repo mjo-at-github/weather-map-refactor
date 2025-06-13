@@ -47,15 +47,54 @@ document.getElementById('cityForm').addEventListener('submit', async function(e)
 });
 
 // Helper functions
-async function fetchGeocode(cityName) {
+/* async function fetchGeocode(cityName) {
     const response = await fetch(`${API_BASE}/api/geocode?city=${encodeURIComponent(cityName)}`);
     return await response.json();
+} */
+async function fetchGeocode(cityName) {
+  try {
+    const response = await fetch(`${API_BASE}/api/geocode?city=${encodeURIComponent(cityName)}`, {
+      mode: 'cors', // Explicitly request CORS
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw error;
+  }
 }
 
-async function fetchWeather(lat, lon) {
+/* async function fetchWeather(lat, lon) {
     const response = await fetch(`${API_BASE}/api/weather?lat=${lat}&lon=${lon}`);
     return await response.json();
-}
+} */
+
+async function fetchWeather(lat, lon) {
+  try {
+    const response = await fetch(`${API_BASE}/api/weather?lat=${lat}&lon=${lon}`, {
+      mode: 'cors', // Explicitly request CORS
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Fetch error:', error);
+    throw error;
+  }
+}   
 
 function showLoading() {
     document.getElementById('weatherResult').innerHTML = `

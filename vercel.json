@@ -1,4 +1,4 @@
-{
+/* {
   "version": 2,
   "builds": [
     {
@@ -17,6 +17,22 @@
       "headers": {
         "Cache-Control": "s-maxage=86400"
       }
+    }
+  ]
+ */}
+
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "methods": ["GET", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://mjo-at-github.github.io",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      "dest": "/api/$1"
     }
   ]
 }
